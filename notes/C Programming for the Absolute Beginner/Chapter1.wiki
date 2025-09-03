@@ -1,0 +1,48 @@
+[[index|back]]
+
+= Chapter 1: Getting Started with C Programming =
+
+== Understanding Keywords ==
+Reserved keywords
+auto, Defines a local variable as having a local lifetime
+break, Passes control out of the programming construct
+case, Branch control
+char, Basic data type
+const, Defines a value that cannot be modified
+continue, Passes control to loop's beginning
+default, Branch control
+do, do while loop
+double, floating-point data type
+else, Conditional statement
+enum, Defines a group of constants of type into
+extern, Indicates an indentifier as defined elsewhere
+float, Floating-point data type
+for, for loop
+goto, Transfers program control unconditionally
+if, Conditional statement
+int, Basic data type
+long, Type modifier
+register, Stores the declared variable in a CPU register
+return, Exits the function
+short, Type modifier
+signed, Type modifier
+sizeof, Returns expression or type size
+static, Preservces variable value after its scope ends
+struct, Groups variables into a single record
+switch, Branch control
+typedef, Creates a new type
+union,  Groups variables that occupy the same storage space
+unsigned, Type modifier
+void, Empty data type
+volatile, Allows a variable to be changed by a background routine
+while, Repeats program execution while the condition is true
+
+== Common escape sequences ==
+\n Creates a newline
+\t Moves the cursor to the next tab
+\r Moves the cursor to the beginning of the current line
+\\ Inserts a backslash
+\" Inserts a double quote
+\' Inserts a single quote
+
+fflush() is good for debugging

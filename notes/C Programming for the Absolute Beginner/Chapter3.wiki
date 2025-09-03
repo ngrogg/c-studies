@@ -1,0 +1,62 @@
+[[index|back]]
+
+= Chapter 3: Conditions =
+
+== Conditional Operators ==
+== Equal
+!= Not Equal
+> Greater Than
+< Less than
+>= Greater than or equal to
+<= Less than or equal to
+
+== Expressions Demonstrated ==
+5 == 5 True
+5 != 5 False
+5 > 5 False
+5 < 5 False
+5 >= 5 True
+5 <= 5 True
+
+== Boolean Algebra: Truth Table for AND Operator ==
+x y result
+T T T
+T F F
+F T F
+F F F
+
+== Boolean Algebra: Truth Table for OR Operator ==
+x y result
+T T T
+T F T
+F T T
+F F F
+
+== Boolean Algebra: Truth Table for OR Operator ==
+x result
+T F
+F T
+
+== Common Character Sets Used To Implement Compound Conditions ==
+&& And
+|| Or
+
+== isdigit() ==
+Character Handling library <ctype.h>
+Takes a single parameter
+isdigit(variable)
+
+Ex.
+`if ( isdigit(variable) == 0) {
+  printf("Thank You\n");
+}`
+
+== Switch ==
+`switch (variable) {
+  case 'a': case 'A':
+    //code
+    break;
+  case 'b': case 'B':
+    //code
+    break;
+}`

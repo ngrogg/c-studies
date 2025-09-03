@@ -1,0 +1,44 @@
+[[index|back]]
+
+= Chapter 2: Primary Data Types =
+
+== Common Variable Characteristics ==
+Attribute, Description
+Name, The Name of the variable used to reference data in program code
+Type, The data type of the variable (number, character and so on)
+Value, The data value assigned to the variable's memory location
+Address, The address assigned to a variable, which points to a memory cell location
+
+== Common Variable Attributes and Sample Values ==
+Variable Name, Value, Type, memory Addressx
+operand1, 29, integer, BA40
+result, 756.21, float, 1AD0
+initial, M, char, 8C70
+
+== Printing Variables ==
+printf("%d",intVariable)
+printf("%f",floatVariable)
+printf("%c",charVariable)
+
+%d Displays signed integer value
+%f Displays signed floating-point value
+%c Displays single character value
+
+== Input with scanf() ==
+scanf("conversion specifier", &variable);
+
+%d Recieve integer value
+%f Recieve floating-point number
+%c Receive character
+
+== Arithmetic Operators ==
+* Multiplication
+/ Division
+% Modulus (Remainder)
++ Addition
+- Subtraction
+
+== Operator Precedence ==
+() First, innermost to outermost
+*, /, % Second, from left to right
++, - Last, from left to right
