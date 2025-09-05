@@ -1,4 +1,4 @@
-= C Studies =
+= C Programming for the Absolute Beginner =
 
 [[Chapter1]]
 [[Chapter2]]
