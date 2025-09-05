@@ -1,1 +1,19 @@
 [[index|back]]
+
+= Looping Structures =
+== Operators ==
+Operator name Syntax Meaning 
+++ Increment (postfix) x++ Increment after expression is evaluated
+++ Increment (prefix) ++x Increment before expression is evaluated
+-- Decrement (postfix) x-- Decrement after expression is evaluated
+-- Decrement (prefix) --x Decrement before expression is evalutated
++= Addition assignment x+=y x = x + y
+-= Subration assignment x-=y x = x - y
+
+Braces for any loop are only required when more than one statment is included in the loops body. 
+`while ( x < 10)
+  printf("the vule of x is %d\n", x++);`
+
+Break and Continue statements can be used to terminate a loop. 
+
+stdio.h includes system calls 
