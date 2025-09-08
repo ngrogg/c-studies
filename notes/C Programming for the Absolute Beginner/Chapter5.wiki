@@ -1,1 +1,16 @@
 [[index|back]]
+
+= Chapter 5: Structured Programming =
+
+== Common Library Functions ==
+Function, Library Header, Description
+scanf(), <stdio.h> (standard input/output), Reads data from the keyboard
+printf(), <stdio.h>, Prints data to the computer monitor
+isdigit(), <ctype.h> (character handling), Tests for decimal digit characters
+islower(), <ctype.h>, Tests for lowercase letters
+isupper(), <ctype.h>, Tests for uppercase letters
+tolower(), <ctype.h>, Converts character to lowercase
+toupper(), <ctype.h>, Converts character to uppercase
+exp(), <stdio.h>, Computes the exponential
+pow(), <math.h> (math functions), Computes a number raised to a power
+sqrt(), <math.h>, Computes the square root
