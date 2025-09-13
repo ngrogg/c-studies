@@ -1,1 +1,32 @@
 = C Programming: Absolute Beginners Guide =
+
+== Chapter 3: Comments ==
+== Chapter 4: Printing to screen ==
+== Chapter 5: Variables ==
+== Chapter 6: Strings, chars and line terminators ==
+== Chapter 7: Importing libraries and headers ==
+== Chapter 8: Reading input ==
+== Chapter 9: Math ==
+== Chapter 10: Assignments and expressions ==
+== Chapter 11: If statements ==
+== Chapter 12: Logical operators ==
+== Chapter 13: Operators ==
+== Chapter 14: Loops ==
+== Chapter 15: More loops ==
+== Chapter 16: Breaking out of a loop ==
+== Chapter 17: Switch statements ==
+== Chapter 18: More input and output statements ==
+== Chapter 19: More string work ==
+== Chapter 20: Advanced Math ==
+== Chapter 21: Arrays ==
+== Chapter 22: Searching Arrays ==
+== Chapter 23: Alphabetizing and arranging data ==
+== Chapter 24: Pointers ==
+== Chapter 25: Arrays and Pointers ==
+== Chapter 26: Maximizing memory ==
+== Chapter 27: Structures ==
+== Chapter 28: Saving Sequential files ==
+== Chapter 29: Saving Random files ==
+== Chapter 30: Functions ==
+== Chapter 31: Passing variables to functions ==
+== Chapter 32: Returning data from functions ==
