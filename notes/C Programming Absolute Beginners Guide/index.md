@@ -1,8 +1,7 @@
 = C Programming: Absolute Beginners Guide =
 
 == Chapter 3: Comments == <br>
-Single line comment <b>
-
+Single line comment <br>
 `// Comment` <br>
 
 Comment block  <br>
