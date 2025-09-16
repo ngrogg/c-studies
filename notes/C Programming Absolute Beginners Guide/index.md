@@ -3,12 +3,12 @@
 == Chapter 3: Comments ==
 Single line comment 
 
-// Comment
+`// Comment`
 
 Comment block 
-\/*
+`/*
     Comment
-\*/
+*/`
 
 == Chapter 4: Printing to screen ==
 printf form
