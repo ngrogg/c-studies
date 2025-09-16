@@ -48,6 +48,28 @@ Ex. <br>
 * `char 90Var;`
 
 == Chapter 6: Strings, chars and line terminators == <br>
+String terminator other names: <br>
+* Null zero
+* Binary zero
+* String terminator
+* ASCII 0
+* \0
+
+Character Array, list of characters: <br>
+`char month[10];`
+
+Must include `\0` as last character. <br>
+Ex. <br>
+`month[0] = 'M';` <br>
+`month[1] = 'a';` <br>
+`month[2] = 'r';` <br>
+`month[3] = 'c';` <br>
+`month[4] = 'h';` <br>
+`month[5] = '\0';` <br>
+
+Use `strcpy()` to copy new string to array: <br>
+`srcpy(month, "April");` <br>
+
 == Chapter 7: Importing libraries and headers == <br>
 == Chapter 8: Reading input == <br>
 == Chapter 9: Math == <br>
