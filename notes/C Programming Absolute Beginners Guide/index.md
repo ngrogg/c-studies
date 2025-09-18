@@ -71,7 +71,32 @@ Use `strcpy()` to copy new string to array: <br>
 `srcpy(month, "April");` <br>
 
 == Chapter 7: Importing libraries and headers == <br>
+Preprocessor directives. <br>
+Always begin with `#` <br>
+
+Common preprocessors: <br>
+* `#include`
+* `#define`
+
+Can include files such as `#include "myFile.txt"` or a header file such as `#include <stdio.h>`.
+
+Define can include variables such as `#define PI 3.14159`
+
 == Chapter 8: Reading input == <br>
+`scanf()` gets user input.
+
+Format: <br>
+`scanf(controlString [,data]);` <br>
+`scanf(" %c", &charVariable);` <br>
+
+Do not need to input escape sequences like `\n`, `\t`, or `\a`.
+
+Can have problems if unexpected data is used. Such as a char in a float variable.
+
+Don't need `&` for arrays and pointers.
+
+To use words with spaces use two scanf statements.
+
 == Chapter 9: Math == <br>
 == Chapter 10: Assignments and expressions == <br>
 == Chapter 11: If statements == <br>
