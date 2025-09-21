@@ -33,7 +33,7 @@ Conversion characteres (data for printf) <br>
 * `%c`, Character
 * `%s`, String
 
-== Chapter 5: Variables == 
+== Chapter 5: Variables ==
 
 
 Common C variable types <br>
@@ -98,6 +98,34 @@ Don't need `&` for arrays and pointers.
 To use words with spaces use two scanf statements.
 
 == Chapter 9: Math == <br>
+Math operators work as expected: <br>
+* `+`, addition
+* `-`, subraction
+* `*`, multiplication
+* `/`, division
+
+Put math in printf statements: <br>
+`printf("In 3 years , I'll be %d years old.\n", age+3);` <br>
+
+`%`, modulus operator. Remainder after integer division. <br>
+Only use for integer data types! <br>
+
+Default order of operators
+Level, Operator, Associativity
+1, ()[]., Left to right
+2, -(negative) `++(increment)` --(decrement) &(address-of) `*`(pointer indirection) sizeof() !(the not operator), Right to left
+3, `*` (multiplication) `/` (division) %(modulus), Left to right
+4, + (addition) - (subtraction), Left to right
+5, `< <= > >=`, Left to right
+6, `== !=`, Left to right
+7, &&, Left to right
+8, || , Left to right
+9, ?: (conditional operator), Right to left
+10, `= *= /= %= -=` assignment operators, Right to left
+11,,(comma operator), Left to right
+
+Override rules as needed with parentheses.
+
 == Chapter 10: Assignments and expressions == <br>
 == Chapter 11: If statements == <br>
 == Chapter 12: Logical operators == <br>
