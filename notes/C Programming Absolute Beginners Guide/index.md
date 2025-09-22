@@ -127,8 +127,51 @@ Level, Operator, Associativity
 Override rules as needed with parentheses.
 
 == Chapter 10: Assignments and expressions == <br>
+type variable = value; <br>
+int intVar = 1; <br>
+
+Compound assignment, variable = variable +- value; etc. 
+
+Use either `variable = variable + value;` OR `variable += value;`
+
+Mind your order!
+
+`total *= 2+3;` is actually `total = total * (2+3)'`
+
+Use typecast  to temporarily change a value for a calculation.
+
+Never use it on a line by itself.
+
+Ex. `salaryBonus = salary * (float)age / 150.0;`
+
 == Chapter 11: If statements == <br>
+
+`if (value1 operator value2) { do stuff }`
+
+Relational operators: <br>
+* `==` , Equal to
+* `>` , Greater than
+* `<` , Less than
+* `>=` , Greater than or equal to 
+* `<=` , Less than or equal to 
+* `!=` , Not equal to
+
+else is catch all
+
+`if (condition) {do stuff}`
+`else if (condition) {do stuff}`
+`else {do stuff}`
+
 == Chapter 12: Logical operators == <br>
+Logical Operators: <br>
+* `&&`, And
+* `||`, Or
+* `!`, Not
+
+`if (condition && condition) {do stuff}`
+
+Mind order, `&&` has precendence over `||`. 
+
 == Chapter 13: Operators == <br>
 == Chapter 14: Loops == <br>
 == Chapter 15: More loops == <br>
