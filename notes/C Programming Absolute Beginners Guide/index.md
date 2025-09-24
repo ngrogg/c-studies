@@ -130,7 +130,7 @@ Override rules as needed with parentheses.
 type variable = value; <br>
 int intVar = 1; <br>
 
-Compound assignment, variable = variable +- value; etc. 
+Compound assignment, variable = variable +- value; etc.
 
 Use either `variable = variable + value;` OR `variable += value;`
 
@@ -152,8 +152,8 @@ Relational operators: <br>
 * `==` , Equal to
 * `>` , Greater than
 * `<` , Less than
-* `>=` , Greater than or equal to 
-* `<=` , Less than or equal to 
+* `>=` , Greater than or equal to
+* `<=` , Less than or equal to
 * `!=` , Not equal to
 
 else is catch all
@@ -170,12 +170,89 @@ Logical Operators: <br>
 
 `if (condition && condition) {do stuff}`
 
-Mind order, `&&` has precendence over `||`. 
+Mind order, `&&` has precendence over `||`.
 
 == Chapter 13: Operators == <br>
+
+Conditional Operator `? :`
+
+? asks a question, if true do first thing if not do the second thing
+
+Ex. For a given number numPick check if it's divisible 2: <br>
+`printf("%d %s divisible by 2.", numPick, (numPick %s ==0) ? ("is") : ("is not"));`
+
+Small-change operators `++` and `--`
+
+`count++`
+
+`count--`
+
+`++count`
+
+`--count`
+
+Do not use on constants: `--14`
+
+prefix and postfix affect order of operations when used with other operators.
+On their own they act the same.
+If it's a prefix C computes it before anything else on the line.
+If it's a postfix C computes it after everything else on the line.
+
+`sizeof()` finds the number of memory locations need to store a data type.
+
+Use on it's own, `i = sizeof(int);`
+
+Or in a print statement<br>
+`printf("the size of i is %s.\n", sizeof(i));`
+
+Default is usually "4" bits but this will vary depending on compiler.
+A size of an array will include the null zero.
+
 == Chapter 14: Loops == <br>
+While loop
+`while (condition) { do stuff }`
+
+Do While loop
+`do` <br>
+`{ do stuff }` <br>
+`while (condition)` <br>
+
+C cannot check the condition until after it executes.
+
 == Chapter 15: More loops == <br>
+For loops
+
+`for (startExpression; testExpression; countExpression) { do stuff }`
+
+Ex.
+
+`for(count=1;count<10;count++) {` <br>
+`printf("count = %d\n",ctr);` <br>
+`}` <br>
+
 == Chapter 16: Breaking out of a loop == <br>
+Break statements are usually used with if statements to break out of a loop early.
+
+To use the previous for loop.
+
+`for(count=1;count<10;count++) {` <br>
+`printf("count = %d\n",ctr);` <br>
+`if (count == 4){`<br>
+`break;`<br>
+`}`<br>
+`}`<br>
+
+Continue forces a loop to continue early. Also typically used with an if statement.
+
+To use the previous for loop
+`for(count=1;count<10;count++) {` <br>
+`printf("count = %d\n",ctr);` <br>
+`if ((count%2) == 1){`<br>
+`printf("I'm rather odd...");` <br>
+`continue;`<br>
+`}`<br>
+`}` <br>
+
 == Chapter 17: Switch statements == <br>
 == Chapter 18: More input and output statements == <br>
 == Chapter 19: More string work == <br>
