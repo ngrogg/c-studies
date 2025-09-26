@@ -254,8 +254,55 @@ To use the previous for loop
 `}` <br>
 
 == Chapter 17: Switch statements == <br>
+If an if/else becomes too complicated it's time for a switch statement.
+
+`switch (expression) {` <br>
+`case (expression1): { do stuff; }` <br>
+`case (expression2): { do stuff; }` <br>
+`// Goes on as needed` <br>
+`default: { do stuff; }` <br>
+
+Personally I make the default a failstate.
+
+Use break statements to ensure only one case executes.
+
+Case statements don't have to be in order, including default.
+
+Place more common options towards top for efficiency, program won't have to read as far.
+
+Use int as float and double can't be match properly
+
 == Chapter 18: More input and output statements == <br>
+`getchar()` and `putchar()`
+
+Leaves a newline variable that needs cleared with a blank `getchar()`
+
+Use `getch()` instead. Will not output to screen however, need to use `putch()` with it.
+
 == Chapter 19: More string work == <br>
+Character testing functions
+
+Use `ctype.h` header.
+`isalpha()`, returns true if variable is a character from a to z.
+
+`isdigit()`, returns true if variable is a number from 0 to 9.
+
+`isupper()` returns true if variable is an upper case letter.
+
+`islower()` returns true if a variable is a lower case letter.
+
+Case changing functions
+`toupper()`, returns argument as uppercase.
+
+`tolower()`, returns argument as lowercase.
+
+String functions
+`strcat()`, STRing ConcATenation. Joins two string arrays.
+
+`puts()`, sends a string to the screen. Automatically puts a newline, don't need to add "\n".
+
+`gets()`, gets a string from the keyboard.
+
 == Chapter 20: Advanced Math == <br>
 == Chapter 21: Arrays == <br>
 == Chapter 22: Searching Arrays == <br>
