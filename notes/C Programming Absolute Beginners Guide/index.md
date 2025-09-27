@@ -134,7 +134,7 @@ Compound assignment, variable = variable +- value; etc.
 
 Use either `variable = variable + value;` OR `variable += value;`
 
-Mind your order!
+Mind order!
 
 `total *= 2+3;` is actually `total = total * (2+3)'`
 
@@ -304,9 +304,88 @@ String functions
 `gets()`, gets a string from the keyboard.
 
 == Chapter 20: Advanced Math == <br>
+Requires `math.h` header.
+
+`floor()` and `ceil()` functions round up and down to nearest integer.
+
+Use on floats, doesn't cast so output with `%f`
+
+`fabs()` floating point absolute value.
+
+`pow()` function raises a value to it's power.
+
+`sqrt()` function returns the square root of a value.
+
+Trig functions
+
+* `cos(x)`, Returns the cosine of the angle x
+* `sin(x)`, Returns the sine of the angle x
+* `tan(x)`, Returns the tangent of the angle x
+* `acos(x)`, Returns the arc cosine of the angle x
+* `asin(x)`, Returns the arc sine of the angle x
+* `atan(x)`, Returns the arc tangent of the angle x
+
+Log functions
+
+* `e^xp(x)`, Returns e, the base of the natural logarithm raise to a power specified by `x(e^x)`.
+* `log(x)`, Returns the natural logarithm of the argument x, mathematically written as `ln(x)`. X must be positive.
+* `log10(x)`, Returns the Base10 logarith of the argument x, mathemtatically written as `log10(x)`. X must be positive.
+
+`rand()` Returns a number from 0 to 32767. Requires the `stdlib.h` header.
+
+To narrow random numbers use the modulus operator `%`.
+
+`dice = (rand() % 5) + 1; // From 1 to 6`
+
+For true random use `srand()` to seed the number generator. Uses the `time.h` header.
+
+`#include <time.h>` <br>
+`time_t t;` <br>
+`srand(time(&t));` <br>
+
 == Chapter 21: Arrays == <br>
+When declaring a C Array leave room for null.
+
+Ex. `char name[6] = "Italy";`
+
+Predefined array of ints: `int vals[5] = {10, 40, 70, 90, 120};`
+
+No null zero needed, null zeroes terminate only strings in character arrays.
+
+Zero out arrays with 0.0:
+
+`float amount[100] = {0.0};`
+
+Use a for loop to enter data into an array.
+
+`int ages[3];` <br>
+`for (int count = 0; count < 3; count++) {` <br>
+`printf("What is the age of child #%d ", count+1);` <br>
+`scanf(" %d", &ages[count]);` <br>
+`}` <br>
+
 == Chapter 22: Searching Arrays == <br>
+Use for loops with if statements and bool variables to find values.
+
+Use if statements to check for values or to compare to an existing value when looking for a max value.
+
+Iterating through an array is a sequential search.
+
 == Chapter 23: Alphabetizing and arranging data == <br>
+Bubble Sort.
+
+Create + populate array with random numbers, iterate through and sort them with a temp variable to swap them.
+
+Nested for loops for bubble sorts.
+
+Logic of swap:
+
+`temp = number[inner];` <br>
+`number[inner] = number[outer];` <br>
+`number[outer] = temp;` <br>
+
+Sorting is useful for a sequential search, as some items will be faster
+
 == Chapter 24: Pointers == <br>
 == Chapter 25: Arrays and Pointers == <br>
 == Chapter 26: Maximizing memory == <br>
