@@ -421,6 +421,7 @@ Pointers are a way around that without using strcpy.
 Catch there is to be mindful of the length.
 
 Do not do this:
+
 `main(){`
 
 `char * name = "Tom Roberts"; ` 
