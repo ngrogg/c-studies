@@ -387,7 +387,70 @@ Logic of swap:
 Sorting is useful for a sequential search, as some items will be faster
 
 == Chapter 24: Pointers == <br>
+Defining Pointer Variables 
+`&`, Address-of operator <br>
+`*`, Dereferencing operator <br>
+
+`int age = 19; // Stores a 19 in int variable age` <br>
+`int * pAge = &age; // Links up to pointer` <br>
+
+Never set the address of one type of variables to a pointer variable of a different type. 
+
 == Chapter 25: Arrays and Pointers == <br>
+An array name is a pointer to the first element in that array.
+
+Pointer constants. 
+
+`int vals[5] = {10, 20, 30, 40, 50};`
+
+Equivalent code: <br>
+`printf("The first value is %d.\n", vals[0]);` <br>
+`printf("The first value is %d.\n", *vals);` <br>
+`printf("The first value is %d.\n", *(vals+0));` <br>
+
+An array being a fixed constant pointer is why it cannot be on the left size of an equals sign. Can't change a constant.
+
+Pointers are a way around that without using strcpy.
+
+`char name[] = "Andrew B. Mayfair";` 
+
+`char * pName = "Andrew B Mayfair";`
+
+`pName = "Theodore M. Brooks";`
+
+Catch there is to be mindful of the length.
+
+Do not do this:
+`main(){`
+
+`char * name = "Tom Roberts"; ` 
+
+`// Program `
+
+`gets(name); // Not safe`
+
+One way is to reserve space and then ensure user cannot enter more than reserved space:
+
+`char input[81]; // Holds a string as long as 80 characters`
+
+`char *iptr = input; // Also could have done char *iptr = &input[0]`
+
+`gets(iptr); // Makes sure that iptr points th the string typed by the user`
+
+`fgets(iptr, 81, stdin); // Gets up to 80 characters and adds a null zero`
+
+Over 80 characters only takes the first 80.
+
+Can also assign the pointer string literals using th4e assignment like this: 
+
+`iptr = "Mary Jayne Norman";`
+
+Can create arrays of pointers: 
+
+`int * ipara[25]; // 25 pointers to integers`
+
+`char * cpara[25]; // 24 pointers to characters`
+
 == Chapter 26: Maximizing memory == <br>
 == Chapter 27: Structures == <br>
 == Chapter 28: Saving Sequential files == <br>
