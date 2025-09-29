@@ -387,19 +387,19 @@ Logic of swap:
 Sorting is useful for a sequential search, as some items will be faster
 
 == Chapter 24: Pointers == <br>
-Defining Pointer Variables 
+Defining Pointer Variables
 `&`, Address-of operator <br>
 `*`, Dereferencing operator <br>
 
 `int age = 19; // Stores a 19 in int variable age` <br>
 `int * pAge = &age; // Links up to pointer` <br>
 
-Never set the address of one type of variables to a pointer variable of a different type. 
+Never set the address of one type of variables to a pointer variable of a different type.
 
 == Chapter 25: Arrays and Pointers == <br>
 An array name is a pointer to the first element in that array.
 
-Pointer constants. 
+Pointer constants.
 
 `int vals[5] = {10, 20, 30, 40, 50};`
 
@@ -412,7 +412,7 @@ An array being a fixed constant pointer is why it cannot be on the left size of 
 
 Pointers are a way around that without using strcpy.
 
-`char name[] = "Andrew B. Mayfair";` 
+`char name[] = "Andrew B. Mayfair";`
 
 `char * pName = "Andrew B Mayfair";`
 
@@ -424,7 +424,7 @@ Do not do this:
 
 `main(){`
 
-`char * name = "Tom Roberts"; ` 
+`char * name = "Tom Roberts"; `
 
 `// Program `
 
@@ -442,20 +442,190 @@ One way is to reserve space and then ensure user cannot enter more than reserved
 
 Over 80 characters only takes the first 80.
 
-Can also assign the pointer string literals using th4e assignment like this: 
+Can also assign the pointer string literals using the assignment like this:
 
 `iptr = "Mary Jayne Norman";`
 
-Can create arrays of pointers: 
+Can create arrays of pointers:
 
 `int * ipara[25]; // 25 pointers to integers`
 
-`char * cpara[25]; // 24 pointers to characters`
+`char * cpara[25]; // 25 pointers to characters`
 
 == Chapter 26: Maximizing memory == <br>
+Heap is unused memory
+
+Allocating/Deallocating heap memory as program runs.
+
+Two basic functions for heap: <br>
+* `malloc()` to allocate heap memory
+* `free()` to deallocate heap memory
+
+`int * temps; // Will point to the first heap value`
+
+`temps = (int *) malloc(10 * sizeof(int)); // Allocate memory for 10 integers on the heap using malloc()`
+
+malloc only requires a single value: the number of bytes to allocate.
+
+`malloc(10); // Allocate 10 bytes`
+
+Always performs the following two steps if enough heap exists: <br>
+1) Allocates the number of requested bytes and makes sure no other program can overwrite memory until program frees it
+2) Assigns pointer the first allocated value
+
+Allocated values can be treated like an array, i.e. `temps[1]`.
+
+`(int *)` is a typecast, pointer typecast as malloc returns a character pointer.
+
+malloc can also be used to check if enough memory is available.
+
+`temps = (int *) malloc(10 * sizeof(int));`<br>
+`if (temps == 0) {}`<br>
+`    printf("Oops! Not Enough Memory!\n);`<br>
+`    exit(1);`<br>
+`}`<br>
+
+0 is an invalid address, no memory address begins with 0. The not (!) operator also could have been used.
+
+`if (!temps)`
+
+Free takes the variable to free as an argumement.
+
+`free(temps); // Gives memory back to the heap`
+
+Be sure not to reuse variable after it's freed, that may overwrite memory and lock up the machine.
+
 == Chapter 27: Structures == <br>
+Structs
+
+`struct [structure tag] {` <br>
+`member definition;` <br>
+`...` <br>
+`member definition;` <br>
+`};` <br>
+
+Example:
+
+`struct invStruct {` <br>
+`char manuf[255]; // Manufacturer name` <br>
+`char model[15]; // Model code` <br>
+`int diskSpace; // Disk space in GB` <br>
+`int memSpace; // RAM in GB` <br>
+`int ports; // Number of USB ports` <br>
+`int quantity; // Number in inventory` <br>
+`float cost; // Cost of computer` <br>
+`float price; // Retail price of computer` <br>
+`};` <br>
+
+Can be defined in a header file and included via `#include "/path/to/header`
+
+Or included before main like a class definition:
+
+`struct invStruct {` <br>
+`// struct definition` <br>
+`}` <br>
+` ` <br>
+`main() {` <br>
+`struct invStruct items[500];` <br>
+`// Rest of program` <br>
+`}` <br>
+
+Can use pointers instead of structure variables.
+
+`struct invStruct *item1, *item2, *item3;`
+
+Set size w/ malloc.
+
+`item1 = (struct invStruct *)malloc(sizeof(invStruct));`
+`item2 = (struct invStruct *)malloc(sizeof(invStruct));`
+`item3 = (struct invStruct *)malloc(sizeof(invStruct));`
+
+Populate with dot operator.
+
+`structureVariableName.memberName`
+
+Example.
+
+`struct bookInfo books[3]; // Assume struct defined elsewhere` <br>
+`for (int count = 0; count < 3; count++) {` <br>
+`gets(book[count].title);`<br>
+`scanf(" $%f", &books[count].price);`<br>
+`getchar(); // Clear newline for next loop`
+`}` <br>
+
+Slightly different syntax for pointers, uses `->` operator.
+
+`struct bookInfo * books[3]; // Assume struct defined elsewhere` <br>
+`for (int count = 0; count < 3; count++) {` <br>
+`boots[count] = (struct bookInfo*)malloc(sizeof(struct bookInfo));`
+`gets(book[count]->title);`<br>
+`scanf(" $%f", &books[count]->price);`<br>
+`getchar(); // Clear newline for next loop`
+`}` <br>
+
 == Chapter 28: Saving Sequential files == <br>
+Two types of files: Sequential-access files and random-access files
+
+Use `fopen()` to open a file. Included in stdio.h.
+
+Close file with `fclose()`, always close files you've opened
+
+Uses a file pointer.
+
+`FILE * fptr; // Defines a file pointer name fptr`
+
+Mind your scope, FILE before main is global!
+
+`#include <stdio.h>`<br>
+`FILE *fptr;`<br>
+`main() {`<br>
+`fptr = fopen("/path/to/file", "w")`<br>
+`// Rest of program`<br>
+`fclose(fptr);`<br>
+`}`<br>
+
+fopen arguements are "w" for write, "r" for read, and "a" for append.
+
+Note, "w" WILL truncate a file!
+
+`fgets()` reads from a file.
+
+`fputs()` writes to a file.
+
+`feof()` Returns true if reading the last line of a file.
+
+`fprintf()` file pointer goes at the beginning of the file.
+
+`fgets()` file pointer goes at the end.
+
 == Chapter 29: Saving Random files == <br>
+Random-Access `fopen()` Modes: <br>
+* "r+", opens an existing file for reading and writing.
+* "w+", opens a new file for writing and reading.
+* "a+", opens a file in append mode (pointer at end of file) but lets you move back through the file.
+
+Use `fseek()` to move around in a file.
+
+`fseek(filePtr, longVal, origin);`
+
+`filePtr` is the file pointer used in the `fopen()` function.
+
+`longVal` is a longint variable or literal that can be positive or negative. Used to skip forwards or backwards in file.
+
+`origin` is the command that tells `fseek()` to start seeking.
+
+Origin values: <br>
+* `SEEK_SET`, Beginning of file
+* `SEEK_CUR`, Current position in file
+* `SEEK_END`, End of file
+
+Fseek only works in random-access files.
+
+`fputc()` outputs individual characters to a file.
+
+`fgetc()` reads individual characters from a file.
+
+
 == Chapter 30: Functions == <br>
 == Chapter 31: Passing variables to functions == <br>
 == Chapter 32: Returning data from functions == <br>
