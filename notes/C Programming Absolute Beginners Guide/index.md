@@ -35,7 +35,6 @@ Conversion characteres (data for printf) <br>
 
 == Chapter 5: Variables ==
 
-
 Common C variable types <br>
 * `char`, Holds character data such as 'x' and '^'
 * `int`, Holds integers such as 1, or -2
@@ -627,5 +626,149 @@ Fseek only works in random-access files.
 
 
 == Chapter 30: Functions == <br>
+routines = Functions
+
+Very little should be in main, mostly just calling other functions.
+
+Structured programming or functional programming.
+
+`// Function definition`
+
+`newFunction(){`
+
+`// Code goes here`
+
+`}`
+
+`int main(){`
+
+`// Call function`
+
+`newFunction();`
+
+`return 0;`
+
+`}`
+
+Variable scale, local or global
+
+Local variables are limited to the function they're defined in.
+
+Variables defined outside of a function are global.
+
+Typically at the beginning of a program to give them the widest scope.
+
+Global variables defined in the middle of a program will only be usable by functions after the definition.
+
+Strongly recommend against global variable use as much as possible.
+
 == Chapter 31: Passing variables to functions == <br>
+
+Two ways to pass variables to functions, by value and by address.
+
+Passing by value, passing by copy.
+
+Passes value of variable to function, not variable itself.
+
+Ex.
+
+`int main(){`
+
+`int variable = 1;`
+
+`// Assume function defined somewhere else, pass defined variable to function`
+
+`function(variable);`
+
+`}`
+
+Passing by value can only use a variable, it can't change it.
+
+Passing by Address
+
+Passes memory address instead of copy of variable.
+
+If variables are changed in function the value of the variable outside the function is changed.
+
+`int main(){`
+
+`// Define variable`
+
+`char name[15] = "Michael Hatton";`
+
+`// Pass variable to function`
+
+`change(name)`;
+
+`}`
+
+`// Function definition `
+
+`change(char name[15]){`
+
+`strcpy(name,"XXXXXXXXXXXXXXX");`
+
+`return;`
+
+`}`
+
+For non-array values use pointers `*` and address references `&` <br>
+
+`// main snippet`
+
+`int i = 2`
+
+`half(&i);`
+
+
+
+`// Function definition`
+
+`half (int *i){`
+
+`*i = *i/2;`
+
+`printf("Your value halved is %d.\n", *i");`
+
+`return;`
+
+`}`
+
 == Chapter 32: Returning data from functions == <br>
+Return statements in functions can return values depending on type.
+
+Functions can take several values but only return one.
+
+Ex.
+
+`// main snippet`
+
+`average = gradeAverage(grade1, grade2, grade3);`
+
+<br>
+
+`// Function definition`
+
+`float gradeAve(float test1, float test2, float test3){`
+
+`float localAverage;`
+
+`localAverage = (test1+test2+test3)/3;`
+
+`return (localAverage);`
+
+`}`
+
+If a return data type isn't specified C assumes int.
+
+That is sloppy, don't do that...
+
+Protyping a function with explicit definitions prevents that.
+
+Useful in case the wrong data type is passed.
+
+I.e function `float compNet(float aVal, float bVal){` has an int passed.
+
+Might work but might return an incorrect value.
+
+While they shouldn't be used in general, don't pass or return global variables to functions.
